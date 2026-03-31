@@ -8,7 +8,9 @@ menuBtn.addEventListener('click', () => {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
         mobileMenu.classList.remove('hidden');
-        // Small delay to allow display:block to apply before animating opacity
+        mobileMenu.classList.add('flex'); // <-- Added: Turns on the flexbox column layout
+        
+        // Small delay to allow display:flex to apply before animating opacity
         setTimeout(() => {
             mobileMenu.classList.remove('opacity-0');
             mobileMenu.classList.add('opacity-100');
@@ -30,6 +32,7 @@ function closeMenu() {
     // Wait for fade out animation to finish before hiding
     setTimeout(() => {
         mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex'); // <-- Added: Cleans up the flex class when closed
     }, 300);
 }
 

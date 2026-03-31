@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#0B0F19]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2nd E-Sports Tournament | CSTC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0B0F19', // Darker for gaming vibe
+                            indigo: '#4338CA',
+                            neon: '#39FF14', // Gaming neon green
+                            surface: '#111827'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(57, 255, 20, 0.2)',
+                        'float': '0 20px 40px rgba(0, 0, 0, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Subtle gaming grid background */
+        .bg-gaming-grid {
+            background-image: linear-gradient(to right, rgba(67, 56, 202, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(67, 56, 202, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-brand-neon selection:text-black bg-gaming-grid">
+
+    <div class="fixed top-6 left-0 w-full z-50 px-4 pointer-events-none flex justify-center">
+        <nav class="pointer-events-auto bg-brand-surface/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 shadow-float flex justify-between items-center gap-8 lg:gap-16 w-full max-w-4xl transition-all">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="./assets/CSTC logo .jpg" alt="CSTC" class="w-8 h-8 rounded-full object-cover" onerror="this.style.display='none'">
+                <span class="font-display font-bold text-white tracking-tight text-lg">CSTC.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#explore" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Explore</a>
+                <a href="events.html" class="text-sm font-bold text-white transition-colors">Events</a>
+                <a href="team.html" class="text-sm font-medium text-slate-400 hover:text-white transition-colors">Team</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#contact" class="hidden md:inline-block px-6 py-2.5 rounded-full bg-brand-indigo text-white text-sm font-medium hover:bg-brand-indigo/80 transition-all hover:scale-105 active:scale-95">Join Club</a>
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-navy z-40 hidden flex-col justify-center items-center space-y-8 px-4 opacity-0 transition-opacity duration-300">
+        <a href="index.html" class="mobile-link text-3xl font-display font-bold text-white hover:text-brand-indigo">Home</a>
+        <a href="events.html" class="mobile-link text-3xl font-display font-bold text-brand-indigo">Events</a>
+        <a href="team.html" class="mobile-link text-3xl font-display font-bold text-white hover:text-brand-indigo">Team</a>
+        <a href="index.html#contact" class="mobile-link mt-8 px-8 py-4 rounded-full bg-brand-indigo text-white text-xl font-medium">Join Club</a>
+    </div>
+
+    <section class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden text-center min-h-[80vh] flex flex-col justify-center">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-indigo/20 rounded-full blur-[150px] pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-neon/10 text-brand-neon border border-brand-neon/20 rounded-full text-xs font-bold tracking-widest uppercase mb-6 shadow-neon">
+                <span class="w-2 h-2 rounded-full bg-brand-neon animate-pulse"></span>
+                Tournament Live Now
+            </div>
+            
+            <p class="text-indigo-400 font-mono font-bold tracking-widest uppercase mb-4">SAARC KHEL KUMBH 2026</p>
+            <h1 class="text-6xl md:text-8xl font-display font-black text-white tracking-tight mb-6 uppercase italic">
+                CSTC <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-indigo to-purple-500">E-Sports</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto font-display font-medium">
+                "Don't Puff, Play Tough." <br/> <span class="text-slate-400 text-lg">Theme: Drug Free Campus</span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="./assets/pdfs/E-Sports 2026.pdf" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-indigo text-white font-bold hover:bg-indigo-600 hover:scale-105 transition-all flex items-center justify-center gap-3 shadow-lg shadow-indigo-500/30">
+                    <i class="fas fa-file-pdf text-xl"></i> Download Rulebook & Fixtures
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto relative z-10">
+        <div class="fade-up bg-brand-surface p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-float">
+            <h2 class="text-3xl font-display font-bold text-white mb-8 flex items-center gap-3"><i class="fas fa-calendar-alt text-brand-indigo"></i> Master Schedule</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-white/10 text-slate-400 font-mono text-sm">
+                            <th class="pb-4 font-semibold uppercase tracking-wider">Date</th>
+                            <th class="pb-4 font-semibold uppercase tracking-wider">Game</th>
+                            <th class="pb-4 font-semibold uppercase tracking-wider hidden md:table-cell">Time</th>
+                            <th class="pb-4 font-semibold uppercase tracking-wider">Venue</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300">
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">28 Mar 2026</td>
+                            <td class="py-4 font-bold text-brand-indigo">Valorant (Day 1)</td>
+                            <td class="py-4 hidden md:table-cell">10:00 a.m. - 8:00 p.m.</td>
+                            <td class="py-4 font-mono text-sm">CSE 006/7/5/8</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">29 Mar 2026</td>
+                            <td class="py-4 font-bold text-yellow-500">Brawl Stars</td>
+                            <td class="py-4 hidden md:table-cell">10:00 a.m. - 1:00 p.m.</td>
+                            <td class="py-4 font-mono text-sm">CSE 005/6/7</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">31 Mar 2026</td>
+                            <td class="py-4 font-bold text-red-500">Tekken 7 + Valorant (Day 2)</td>
+                            <td class="py-4 hidden md:table-cell">11:00 a.m. - 6:00 p.m.</td>
+                            <td class="py-4 font-mono text-sm">CSE 005/6/7/8/10</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">03 Apr 2026</td>
+                            <td class="py-4 font-bold text-blue-400">EAFC Mobile</td>
+                            <td class="py-4 hidden md:table-cell">10:30 a.m. - 4:30 p.m.</td>
+                            <td class="py-4 font-mono text-sm">CSE 005/6/7</td>
+                        </tr>
+                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">04 Apr 2026</td>
+                            <td class="py-4 font-bold text-orange-500">BGMI + Minecraft</td>
+                            <td class="py-4 hidden md:table-cell">11:00 a.m. - 4:30 p.m.</td>
+                            <td class="py-4 font-mono text-sm">CSE 005/6/7</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition-colors">
+                            <td class="py-4 font-medium text-white">05 Apr 2026</td>
+                            <td class="py-4 font-bold text-brand-indigo">Valorant (Finals)</td>
+                            <td class="py-4 hidden md:table-cell">TBD</td>
+                            <td class="py-4 font-mono text-sm">CSE 005/6/7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">The Titles.</h2>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto">Five premier titles. One ultimate championship. Click the rulebook above for full fixtures.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="fade-up lg:col-span-2 bg-brand-surface p-8 rounded-[2rem] border border-white/10 hover:border-brand-indigo/50 transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 bg-red-500/10 text-red-500 rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-crosshairs"></i></div>
+                    <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-mono rounded-full border border-white/10">PC</span>
+                </div>
+                <h3 class="text-2xl font-display font-bold text-white mb-2">Valorant</h3>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">Single Round Robin format. All matches are Best of 3 (BO3). Points are calculated via Match Wins and Round Differentials. Online players must screen share via Discord.</p>
+                <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Format</span><span class="font-bold text-white">5v5 BO3</span></div>
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Win Pts</span><span class="font-bold text-white">3 Pts</span></div>
+                </div>
+            </div>
+
+            <div class="fade-up bg-brand-surface p-8 rounded-[2rem] border border-white/10 hover:border-orange-500/50 transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 bg-orange-500/10 text-orange-500 rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-fighter-jet"></i></div>
+                    <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-mono rounded-full border border-white/10">Mobile</span>
+                </div>
+                <h3 class="text-2xl font-display font-bold text-white mb-2">BGMI</h3>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">3 Custom Room Classic matches on Erangel. Total score = Placement Points + Kill Points (1 pt/kill).</p>
+                <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Format</span><span class="font-bold text-white">Squad (4v4)</span></div>
+                </div>
+            </div>
+
+            <div class="fade-up bg-brand-surface p-8 rounded-[2rem] border border-white/10 hover:border-blue-500/50 transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center text-3xl"><i class="far fa-futbol"></i></div>
+                    <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-mono rounded-full border border-white/10">Mobile</span>
+                </div>
+                <h3 class="text-2xl font-display font-bold text-white mb-2">FC Mobile</h3>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">Head-to-Head (H2H) mode. Group Stage (18 players) leading into a Best of 3 Knockout Stage.</p>
+                <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Format</span><span class="font-bold text-white">1v1 H2H</span></div>
+                </div>
+            </div>
+
+            <div class="fade-up bg-brand-surface p-8 rounded-[2rem] border border-white/10 hover:border-yellow-500/50 transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 bg-yellow-500/10 text-yellow-500 rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-star"></i></div>
+                    <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-mono rounded-full border border-white/10">Mobile</span>
+                </div>
+                <h3 class="text-2xl font-display font-bold text-white mb-2">Brawl Stars</h3>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">Free-for-all solo Group Stage (8-player lobbies) advancing to 1v1 Duels in the Knockout phase.</p>
+                <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Format</span><span class="font-bold text-white">FFA to 1v1</span></div>
+                </div>
+            </div>
+
+            <div class="fade-up bg-brand-surface p-8 rounded-[2rem] border border-white/10 hover:border-red-600/50 transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <div class="w-14 h-14 bg-red-600/10 text-red-600 rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-hand-rock"></i></div>
+                    <span class="px-3 py-1 bg-white/5 text-slate-300 text-xs font-mono rounded-full border border-white/10">PC/Console</span>
+                </div>
+                <h3 class="text-2xl font-display font-bold text-white mb-2">Tekken 7</h3>
+                <p class="text-slate-400 mb-6 text-sm leading-relaxed">King of Iron Fist Tournament rules. All matches are Best of 3 (FT2). Semis and Grand Finals are Best of 5 (FT3).</p>
+                <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                    <div class="text-sm"><span class="text-slate-500 block text-xs uppercase tracking-wider mb-1">Format</span><span class="font-bold text-white">1v1 FT2/FT3</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-12 text-center bg-brand-surface relative z-10 border-t border-white/10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <p class="font-display font-bold text-white text-2xl mb-6">CSTC</p>
+            <p class="text-slate-500 text-sm">© 2026 South Asian University. Think. Innovate. Build.</p>
+            <p class="text-slate-600 text-xs mt-2 font-mono">SAARC Nations: Afghanistan | Bangladesh | Bhutan | India | Maldives | Nepal | Pakistan | Sri Lanka</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

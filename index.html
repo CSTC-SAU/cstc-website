@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#F8FAFC]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSTC | Innovate at SAU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1A1B4B',
+                            indigo: '#4338CA',
+                            light: '#F8FAFC',
+                            surface: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'bento': '0 4px 40px rgba(0, 0, 0, 0.04)',
+                        'float': '0 20px 40px rgba(26, 27, 75, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-brand-indigo selection:text-white">
+
+    <div class="fixed top-6 left-0 w-full z-50 px-4 pointer-events-none flex justify-center">
+        <nav class="pointer-events-auto bg-white/80 backdrop-blur-xl border border-white rounded-full px-6 py-3 shadow-float flex justify-between items-center gap-8 lg:gap-16 w-full max-w-4xl transition-all">
+            <a href="#" class="flex items-center gap-3">
+                <img src="./assets/CSTC logo .jpg" alt="CSTC" class="w-8 h-8 rounded-full object-cover" onerror="this.style.display='none'">
+                <span class="font-display font-bold text-brand-navy tracking-tight text-lg">CSTC.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#explore" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Explore</a>
+                <a href="#domains" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Domains</a>
+                <a href="events.html" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Events</a>
+                <a href="team.html" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Team</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#contact" class="hidden md:inline-block px-6 py-2.5 rounded-full bg-brand-navy text-white text-sm font-medium hover:bg-brand-indigo transition-all hover:scale-105 active:scale-95">Join Club</a>
+                <button id="menu-toggle" class="md:hidden text-brand-navy focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-light z-40 hidden flex-col justify-center items-center space-y-8 px-4 opacity-0 transition-opacity duration-300">
+        <a href="#explore" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Explore</a>
+        <a href="#domains" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Domains</a>
+        <a href="events.html" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Events</a>
+        <a href="team.html" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Team</a>
+        <a href="#contact" class="mobile-link mt-8 px-8 py-4 rounded-full bg-brand-navy text-white text-xl font-medium">Join Club</a>
+    </div>
+
+    <section class="pt-40 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[90vh] flex flex-col justify-center relative">
+        <div class="absolute top-20 right-0 w-96 h-96 bg-brand-indigo/10 rounded-full blur-[100px] -z-10"></div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-8 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-sm font-medium text-brand-indigo mb-8 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-indigo opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-indigo"></span>
+                    </span>
+                    South Asian University
+                </div>
+                <h1 class="text-6xl sm:text-7xl lg:text-[5.5rem] leading-[1.1] font-display font-bold text-brand-navy tracking-tight mb-6 min-h-[140px] sm:min-h-[160px] lg:min-h-[200px]">
+                    We <br/> 
+                    <span id="hero-typewriter" class="text-brand-indigo"></span><span class="text-brand-indigo font-light animate-pulse">|</span>
+                </h1>
+                <p class="text-xl text-slate-500 max-w-2xl leading-relaxed mb-10">
+                    Think. Innovate. Build. We are a collective of developers, designers, and creators pushing the boundaries of technology at SAU.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-8 py-4 rounded-2xl bg-brand-navy text-white font-medium hover:bg-brand-indigo transition-all hover:shadow-float flex items-center gap-2 group">
+                        Start Building <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden lg:block lg:col-span-4 fade-up delay-200">
+                <div class="bg-white p-6 rounded-[2rem] shadow-bento border border-slate-100 relative overflow-hidden h-[400px] flex flex-col justify-end">
+                    <div class="absolute top-6 left-6 text-brand-indigo/20 font-mono text-9xl font-bold leading-none">}</div>
+                    <div class="relative z-10">
+                        <div class="h-2 w-12 bg-brand-indigo rounded-full mb-4"></div>
+                        <h3 class="text-2xl font-display font-bold text-brand-navy">40+ Members</h3>
+                        <p class="text-slate-500 mt-2">Collaborating across Tech, Design, Ops, and PR.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="explore" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[280px]">
+            
+            <div class="fade-up md:col-span-2 lg:col-span-2 row-span-1 md:row-span-2 bg-brand-navy text-white p-10 rounded-[2rem] flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-indigo rounded-full blur-[80px] opacity-50 group-hover:opacity-80 transition-opacity duration-700"></div>
+                <div class="relative z-10">
+                    <i class="fas fa-globe text-3xl text-brand-indigo mb-6"></i>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">Bridging theory & industry.</h2>
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-md">Our mission is to cultivate a thriving ecosystem of innovation. We move beyond the classroom through hands-on workshops, competitive programming, and collaborative projects.</p>
+                </div>
+            </div>
+
+            <div class="fade-up md:col-span-1 lg:col-span-2 bg-white p-8 rounded-[2rem] shadow-bento border border-slate-100 flex flex-col justify-between group hover:border-brand-indigo/30 transition-colors">
+                <div class="flex justify-between items-start">
+                    <span class="px-3 py-1 bg-brand-light text-brand-indigo text-xs font-bold rounded-full tracking-wider uppercase">Upcoming Event</span>
+                    <span class="text-brand-navy font-display font-bold text-xl text-right">APR<br/>09 - 10</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-display font-bold text-brand-navy mb-2 group-hover:text-brand-indigo transition-colors">Smart Campus Hackathon</h3>
+                    <p class="text-slate-500 mb-6">A high-stakes coding sprint to build innovative solutions for the university ecosystem.</p>
+                    <a href="hackathon.html" class="inline-flex items-center gap-2 text-brand-indigo font-medium hover:gap-3 transition-all">View Details <i class="fas fa-arrow-right text-sm"></i></a>
+                </div>
+            </div>
+
+            <div id="est-box" class="fade-up bg-brand-indigo text-white p-6 rounded-[2rem] flex flex-col justify-center items-center text-center relative overflow-hidden group shadow-bento cursor-pointer">
+                <span class="absolute top-6 left-6 px-3 py-1 bg-white/10 text-indigo-100 text-[10px] font-bold rounded-full tracking-widest uppercase">Origin</span>
+                
+                <div id="binary-t" class="font-mono font-bold flex flex-col items-center transition-all duration-500 ease-in-out">
+                    <div class="tracking-[0.2em] text-lg sm:text-xl text-white mb-1">10110010</div>
+                    <div class="tracking-[0.2em] text-lg sm:text-xl text-indigo-300">011</div>
+                    <div class="tracking-[0.2em] text-lg sm:text-xl text-indigo-300">111</div>
+                    <div class="tracking-[0.2em] text-lg sm:text-xl text-indigo-300">101</div>
+                    <div class="tracking-[0.2em] text-lg sm:text-xl text-indigo-300">001</div>
+                </div>
+
+                <div id="decoded-date" class="absolute inset-0 flex flex-col items-center justify-center opacity-0 scale-95 transition-all duration-500 ease-in-out pointer-events-none">
+                    <span id="typed-date" class="text-3xl md:text-4xl font-display font-bold text-white mb-1"></span>
+                    <span class="text-sm font-mono text-indigo-200 tracking-widest uppercase">Established</span>
+                </div>
+
+                <p class="absolute bottom-6 text-[10px] text-indigo-300 font-mono opacity-50 group-hover:opacity-100 transition-opacity">System.decrypt()</p>
+            </div>
+
+            <a href="esports.html" class="fade-up bg-white p-8 rounded-[2rem] shadow-bento border border-slate-100 flex flex-col justify-between">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full tracking-wider uppercase flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Live Now
+                    </span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-display font-bold text-brand-navy mb-2">E-Sports Tournament 2026</h3>
+                    <p class="text-slate-500 text-sm">Ongoing since March 26. Show off your skills and compete against the best.</p>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+
+    <section id="domains" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-slate-200">
+        <div class="text-center mb-16 fade-up">
+            <h2 class="text-4xl md:text-5xl font-display font-bold text-brand-navy mb-4">How We Operate.</h2>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto">CSTC functions like a real-world tech organization, divided into four core pillars.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="fade-up bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-all group">
+                <div class="w-14 h-14 bg-brand-indigo/10 text-brand-indigo rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-code"></i></div>
+                <h3 class="text-xl font-display font-bold text-brand-navy mb-3">Tech</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Manages the logic and technical environments for all events. From building and maintaining platforms to propelling theoretical and practical technical education.</p>
+            </div>
+            <div class="fade-up bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-all group delay-100">
+                <div class="w-14 h-14 bg-brand-indigo/10 text-brand-indigo rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-pen-nib"></i></div>
+                <h3 class="text-xl font-display font-bold text-brand-navy mb-3">Design</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">The creative engine. Deals with all visual communications including UI/UX, event posters, certificates, club branding, and logos.</p>
+            </div>
+            <div class="fade-up bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-all group delay-200">
+                <div class="w-14 h-14 bg-brand-indigo/10 text-brand-indigo rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-bullhorn"></i></div>
+                <h3 class="text-xl font-display font-bold text-brand-navy mb-3">Public Relations</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">The voice of the club. Handles social media, promotions, and serves as the official channel between CSTC, external entities, and other organizations.</p>
+            </div>
+            <div class="fade-up bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-all group delay-300">
+                <div class="w-14 h-14 bg-brand-indigo/10 text-brand-indigo rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform"><i class="fas fa-cogs"></i></div>
+                <h3 class="text-xl font-display font-bold text-brand-navy mb-3">Operations</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">The backbone of our events. Deals with all logistical planning, financial management, and on-the-ground event execution.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+        
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-16"></div>
+
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 fade-up">
+            <div class="max-w-2xl bg-transparent">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-brand-navy mb-4">Leadership.</h2>
+                <p class="text-xl text-slate-500">Meet the department heads guiding the club's vision.</p>
+            </div>
+            <a href="team.html" class="hidden md:inline-flex items-center gap-2 text-brand-indigo font-medium hover:gap-3 transition-all">
+                View Full Roster <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 fade-up">
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-shadow">
+                <div class="w-20 h-20 rounded-2xl bg-brand-navy flex items-center justify-center text-white font-display font-bold text-2xl mb-4 overflow-hidden">
+                    <img src="./assets/Subham Agarwal.jpg" alt="Subham Agarwal" class="w-full h-full object-cover" onerror="this.outerHTML='SA'">
+                </div>
+                <h4 class="text-lg font-bold text-brand-navy">Subham Agarwal</h4>
+                <p class="text-brand-indigo text-sm font-medium">Head of Tech</p>
+            </div>
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-shadow">
+                <div class="w-20 h-20 rounded-2xl bg-brand-navy flex items-center justify-center text-white font-display font-bold text-2xl mb-4 overflow-hidden">
+                    <img src="./assets/Aanvi Sharma.jpg" alt="Aanvi Sharma" class="w-full h-full object-cover" onerror="this.outerHTML='AS'">
+                </div>
+                <h4 class="text-lg font-bold text-brand-navy">Aanvi Sharma</h4>
+                <p class="text-brand-indigo text-sm font-medium">Head of Design</p>
+            </div>
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-shadow">
+                <div class="w-20 h-20 rounded-2xl bg-brand-navy flex items-center justify-center text-white font-display font-bold text-2xl mb-4 overflow-hidden">
+                    <img src="./assets/sparsh.jpg" alt="Sparsh Samarat" class="w-full h-full object-cover" onerror="this.outerHTML='SS'">
+                </div>
+                <h4 class="text-lg font-bold text-brand-navy">Sparsh Samarat</h4>
+                <p class="text-brand-indigo text-sm font-medium">Head of Operations</p>
+            </div>
+            <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-100 hover:shadow-bento transition-shadow">
+                <div class="w-20 h-20 rounded-2xl bg-brand-navy flex items-center justify-center text-white font-display font-bold text-2xl mb-4 overflow-hidden">
+                    <img src="./assets/Aditya Adhikari.jpg" alt="Aditya Adhikari" class="w-full h-full object-cover" onerror="this.outerHTML='AA'">
+                </div>
+                <h4 class="text-lg font-bold text-brand-navy">Aditya Adhikari</h4>
+                <p class="text-brand-indigo text-sm font-medium">Head of PR</p>
+            </div>
+        </div>
+        
+        <a href="team.html" class="md:hidden inline-flex items-center gap-2 text-brand-indigo font-medium mt-4">
+            View Full Roster <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+    </section>
+
+    <section id="contact" class="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto mb-20 fade-up">
+        <div class="bg-brand-navy rounded-[3rem] overflow-hidden shadow-float flex flex-col lg:flex-row">
+            <div class="lg:w-5/12 p-12 lg:p-16 flex flex-col justify-between relative">
+                <div class="absolute inset-0 bg-brand-indigo/20 mix-blend-multiply"></div>
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">Initialize<br/>connection.</h2>
+                    <p class="text-slate-300 text-lg mb-12">Whether you want to build apps, design interfaces, or manage tech events—there's a spot for you.</p>
+                </div>
+                <div class="relative z-10 space-y-4">
+                    <p class="text-slate-300 flex items-center gap-4"><i class="fas fa-map-marker-alt text-brand-indigo"></i> SAU, New Delhi</p>
+                    <p class="text-slate-300 flex items-center gap-4"><i class="fas fa-envelope text-brand-indigo"></i> cstc@sau.int</p>
+                </div>
+            </div>
+            <div class="lg:w-7/12 bg-white p-12 lg:p-16">
+                <form action="https://formspree.io/f/mzdkggeb" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-brand-navy">First Name</label>
+                            <input type="text" name="first_name" class="w-full bg-brand-light border-none rounded-xl px-4 py-3 text-brand-navy focus:ring-2 focus:ring-brand-indigo transition-shadow outline-none" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-brand-navy">Last Name</label>
+                            <input type="text" name="last_name" class="w-full bg-brand-light border-none rounded-xl px-4 py-3 text-brand-navy focus:ring-2 focus:ring-brand-indigo transition-shadow outline-none" required>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-brand-navy">University Email</label>
+                        <input type="email" name="email" class="w-full bg-brand-light border-none rounded-xl px-4 py-3 text-brand-navy focus:ring-2 focus:ring-brand-indigo transition-shadow outline-none" required>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-brand-navy">Area of Interest</label>
+                        <select name="domain_interest" class="w-full bg-brand-light border-none rounded-xl px-4 py-3 text-brand-navy focus:ring-2 focus:ring-brand-indigo transition-shadow outline-none appearance-none">
+                            <option value="Tech">Tech / Development</option>
+                            <option value="Design">Design / UI/UX</option>
+                            <option value="PR">Public Relations</option>
+                            <option value="Operations">Operations</option>
+                        </select>
+                    </div>
+
+                    <input type="hidden" name="_next" value="https://your-website-url.com/index.html">
+                
+                    <button type="submit" class="w-full bg-brand-indigo text-white font-semibold text-lg rounded-xl py-4 hover:bg-brand-navy transition-colors mt-4">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center bg-white relative z-10 border-t border-slate-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <p class="font-display font-bold text-brand-navy text-2xl mb-6">CSTC</p>
+            
+            <div class="flex items-center gap-6 mb-8">
+                <a href="https://www.youtube.com/@cstcsau" target="_blank" class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-brand-indigo hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="YouTube">
+                    <i class="fab fa-youtube text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/cstc-sau/" target="_blank" class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-brand-indigo hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-lg"></i>
+                </a>
+                <a href="https://www.twitch.tv/cstc_sau" target="_blank" class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-brand-indigo hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="Twitch">
+                    <i class="fab fa-twitch text-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/cstc_sau/" target="_blank" class="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-brand-indigo hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+                    <i class="fab fa-instagram text-lg"></i>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm">© 2026 South Asian University. Think. Innovate. Build.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

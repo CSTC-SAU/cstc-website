@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#F8FAFC]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | CSTC SAU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1A1B4B',
+                            indigo: '#4338CA',
+                            light: '#F8FAFC',
+                            surface: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'bento': '0 4px 40px rgba(0, 0, 0, 0.04)',
+                        'float': '0 20px 40px rgba(26, 27, 75, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-brand-indigo selection:text-white">
+
+    <div class="fixed top-6 left-0 w-full z-50 px-4 pointer-events-none flex justify-center">
+        <nav class="pointer-events-auto bg-white/80 backdrop-blur-xl border border-white rounded-full px-6 py-3 shadow-float flex justify-between items-center gap-8 lg:gap-16 w-full max-w-4xl transition-all">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="./assets/CSTC logo .jpg" alt="CSTC" class="w-8 h-8 rounded-full object-cover" onerror="this.style.display='none'">
+                <span class="font-display font-bold text-brand-navy tracking-tight text-lg">CSTC.</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#explore" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Explore</a>
+                <a href="index.html#domains" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Domains</a>
+                <a href="events.html" class="text-sm font-medium text-slate-600 hover:text-brand-indigo transition-colors">Events</a>
+                <a href="team.html" class="text-sm font-bold text-brand-indigo transition-colors">Team</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="index.html#contact" class="hidden md:inline-block px-6 py-2.5 rounded-full bg-brand-navy text-white text-sm font-medium hover:bg-brand-indigo transition-all hover:scale-105 active:scale-95">Join Club</a>
+                <button id="menu-toggle" class="md:hidden text-brand-navy focus:outline-none"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-brand-light z-40 hidden flex-col justify-center items-center space-y-8 px-4 opacity-0 transition-opacity duration-300">
+        <a href="index.html" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Home</a>
+        <a href="events.html" class="mobile-link text-3xl font-display font-bold text-brand-navy hover:text-brand-indigo">Events</a>
+        <a href="team.html" class="mobile-link text-3xl font-display font-bold text-brand-indigo">Team</a>
+        <a href="index.html#contact" class="mobile-link mt-8 px-8 py-4 rounded-full bg-brand-navy text-white text-xl font-medium">Join Club</a>
+    </div>
+
+    <section class="pt-40 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div class="fade-up">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-brand-navy tracking-tight mb-4">
+                The <span class="text-brand-indigo">Collective.</span>
+            </h1>
+            <p class="text-xl text-slate-500 max-w-2xl mx-auto">
+                Meet the directors and the 40+ dedicated members who currently power the South Asian University Computer Science Technology Club.
+            </p>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 py-12">
+
+        <section class="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-xl"><i class="fas fa-code"></i></div>
+                <h2 class="text-3xl font-display font-bold text-brand-navy">Tech Department</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/Subham Agarwal.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='SA'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Subham Agarwal</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Head of Tech</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/suyash.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='SG'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Suyash Singh Gusain</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Co-Head of Tech</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Atrey Vashishth</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Titas Mahato</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Bodapatla Divyendu</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Rajnish Kumar Singh</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Akshat Kumar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Harkeerat Singh</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Ansh Katiyar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Hiya Patwal</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Asavari Nautiyal</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Raghav</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Prakhar Parashar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Varun Agarwal</div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-xl"><i class="fas fa-pen-nib"></i></div>
+                <h2 class="text-3xl font-display font-bold text-brand-navy">Design Department</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/Aanvi Sharma.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='AS'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Aanvi Sharma</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Head of Design</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/saara.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='SA'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Saara Ahmed</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Co-Head of Design</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Aditya Kumar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Altamash Nawed</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Anushka Verma</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Divyaanshi Singh</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Srija Das</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Devika Nair</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Ipsita Bajpai</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Shreya Bansal</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Soumyadip Debnath</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Utkarsh</div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-xl"><i class="fas fa-bullhorn"></i></div>
+                <h2 class="text-3xl font-display font-bold text-brand-navy">PR Department</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/Aditya Adhikari.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='AA'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Aditya Adhikari</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Head of PR</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/anshika.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='AG'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Anshika Gupta</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Co-Head of PR</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Misbah Ul Islam</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Arnav Mishra</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Tarini Parashar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Shri Mahaveer</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Navyaa Singh</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Anoushka Basu</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Swasti Aggarwal</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">B. Danusri</div>
+            </div>
+        </section>
+
+        <section class="fade-up">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-xl bg-brand-indigo/10 text-brand-indigo flex items-center justify-center text-xl"><i class="fas fa-cogs"></i></div>
+                <h2 class="text-3xl font-display font-bold text-brand-navy">Operations Department</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/sparsh.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='SS'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Sparsh Samarat</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Head of Operations</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 flex items-center gap-4 shadow-sm">
+                    <div class="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center font-display font-bold text-brand-navy overflow-hidden">
+                        <img src="./assets/lavanya.jpg" alt="" class="w-full h-full object-cover" onerror="this.outerHTML='LS'">
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-brand-navy text-lg">Lavanya Sharma</h4>
+                        <p class="text-sm text-brand-indigo font-medium">Co-Head of Operations</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Vaibhav Tripathi</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Kishlay</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Varun Agarwal</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Tanmay Madan</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Madhav Kathuria</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Agustya Vats</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Pratyush Kumar</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Namanpreet Singh</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Raghav</div>
+                <div class="px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-medium text-slate-700 hover:border-brand-indigo transition-colors">Anushy Jatasra</div>
+            </div>
+        </section>
+
+    </div>
+
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-slate-200 mt-12 bg-white rounded-t-[3rem] shadow-[0_-20px_40px_rgba(0,0,0,0.02)] relative z-10">
+        <div class="flex items-center gap-4 mb-12 fade-up">
+            <div class="h-px bg-slate-200 flex-grow"></div>
+            <span class="font-mono text-sm font-bold text-slate-400 tracking-widest uppercase">The Foundation</span>
+            <div class="h-px bg-slate-200 flex-grow"></div>
+        </div>
+
+        <div class="text-center mb-10 fade-up">
+            <h2 class="text-3xl font-display font-bold text-brand-navy mb-2">The Founders</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-sm">The five original minds who established the Computer Science Technology Club in February 2025.</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 fade-up">
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-brand-navy text-white p-8 rounded-[2rem] shadow-float text-center relative overflow-hidden group">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-indigo/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center text-brand-navy font-display font-bold text-2xl mb-4 overflow-hidden relative z-10 border-4 border-brand-navy shadow-lg">
+                    <img src="./assets/Subham Agarwal.jpg" alt="Subham" class="w-full h-full object-cover" onerror="this.outerHTML='SA'">
+                </div>
+                <h3 class="text-lg font-display font-bold relative z-10">Subham Agarwal</h3>
+                <p class="text-indigo-300 font-mono text-xs mt-1 relative z-10">Founder</p>
+            </div>
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-brand-navy text-white p-8 rounded-[2rem] shadow-float text-center relative overflow-hidden group delay-75">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-indigo/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center text-brand-navy font-display font-bold text-2xl mb-4 overflow-hidden relative z-10 border-4 border-brand-navy shadow-lg">
+                    <img src="./assets/Aanvi Sharma.jpg" alt="Aanvi" class="w-full h-full object-cover" onerror="this.outerHTML='AS'">
+                </div>
+                <h3 class="text-lg font-display font-bold relative z-10">Aanvi Sharma</h3>
+                <p class="text-indigo-300 font-mono text-xs mt-1 relative z-10">Founder</p>
+            </div>
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-brand-navy text-white p-8 rounded-[2rem] shadow-float text-center relative overflow-hidden group delay-150">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-indigo/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-white flex items-center justify-center text-brand-navy font-display font-bold text-2xl mb-4 overflow-hidden relative z-10 border-4 border-brand-navy shadow-lg">
+                    <img src="./assets/sparsh.jpg" alt="Sparsh" class="w-full h-full object-cover" onerror="this.outerHTML='SS'">
+                </div>
+                <h3 class="text-lg font-display font-bold relative z-10">Sparsh Samarat</h3>
+                <p class="text-indigo-300 font-mono text-xs mt-1 relative z-10">Founder</p>
+            </div>
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-brand-navy text-white p-8 rounded-[2rem] shadow-float text-center relative overflow-hidden group delay-200">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-display font-bold text-2xl mb-4 overflow-hidden relative z-10 border-4 border-brand-navy shadow-lg">
+                    <img src="./assets/anuj.jpg" alt="Anuj" class="w-full h-full object-cover grayscale opacity-80" onerror="this.outerHTML='AK'">
+                </div>
+                <h3 class="text-lg font-display font-bold text-slate-300 relative z-10">Anuj Kumar</h3>
+                <p class="text-slate-400 font-mono text-xs mt-1 relative z-10">Founder</p>
+            </div>
+            <div class="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-brand-navy text-white p-8 rounded-[2rem] shadow-float text-center relative overflow-hidden group delay-300">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-20 h-20 mx-auto rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-display font-bold text-2xl mb-4 overflow-hidden relative z-10 border-4 border-brand-navy shadow-lg">
+                    <img src="./assets/vikryansh.jpg" alt="Vikryansh" class="w-full h-full object-cover grayscale opacity-80" onerror="this.outerHTML='VS'">
+                </div>
+                <h3 class="text-lg font-display font-bold text-slate-300 relative z-10">Vikryansh Singh</h3>
+                <p class="text-slate-400 font-mono text-xs mt-1 relative z-10">Founder</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center bg-white relative z-10">
+        <p class="font-display font-bold text-brand-navy text-xl mb-2">CSTC</p>
+        <p class="text-slate-500 text-sm">© 2026 South Asian University. Think. Innovate. Build.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -125,7 +125,7 @@
 
             <div class="fade-up md:col-span-1 lg:col-span-2 bg-white p-8 rounded-[2rem] shadow-bento border border-slate-100 flex flex-col justify-between group hover:border-brand-indigo/30 transition-colors">
                 <div class="flex justify-between items-start mb-6 md:mb-0">
-                    <span class="px-3 py-1 bg-brand-light text-brand-indigo text-xs font-bold rounded-full tracking-wider uppercase">Upcoming Event</span>
+                    <span class="px-3 py-1 bg-brand-light text-brand-indigo text-xs font-bold rounded-full tracking-wider uppercase">Ended</span>
                     <span class="text-brand-navy font-display font-bold text-xl text-right">APR<br/>09 - 10</span>
                 </div>
                 <div>
@@ -156,13 +156,11 @@
 
             <a href="esports.html" class="fade-up bg-white p-8 rounded-[2rem] shadow-bento border border-slate-100 flex flex-col justify-between">
                 <div class="flex justify-between items-center mb-6 md:mb-4">
-                    <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full tracking-wider uppercase flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span> Live Now
-                    </span>
+                    <span class="px-3 py-1 bg-brand-light text-brand-indigo text-xs font-bold rounded-full tracking-wider uppercase">Ended</span>
                 </div>
                 <div>
                     <h3 class="text-xl font-display font-bold text-brand-navy mb-2">E-Sports Tournament 2026</h3>
-                    <p class="text-slate-500 text-sm">Ongoing since March 26. Show off your skills and compete against the best.</p>
+                    <p class="text-slate-500 text-sm">Concluded in April 2026. Students competed across 5 competitive titles for the championship.</p>
                 </div>
             </a>
             
@@ -338,5 +336,116 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <div id="cstc-easter-egg" class="fixed inset-0 z-[9999] hidden flex-col items-center justify-center bg-[#0B1120]/95 backdrop-blur-xl opacity-0 transition-opacity duration-700">
+    
+    <div class="relative flex items-center justify-center w-64 h-64 md:w-80 md:h-80">
+        <div class="absolute inset-0 rounded-full border-4 border-dashed border-green-500/30 animate-[spin_15s_linear_infinite]"></div>
+        <div class="absolute inset-4 rounded-full border-t-4 border-l-4 border-brand-indigo/60 animate-[spin_10s_linear_infinite_reverse]"></div>
+
+        <img src="./assets/CSTC logo.png" alt="CSTC Logo" 
+             class="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-[0_0_60px_rgba(79,70,229,0.3)] animate-pulse relative z-10 bg-slate-900">
+    </div>
+
+    <div class="mt-12 flex items-center justify-center min-h-[5rem]">
+        <div id="binary-stream" class="font-mono text-center max-w-4xl px-8 leading-loose transition-all duration-500 opacity-100"></div>
+    </div>
+
+    <p class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 font-mono text-xs tracking-[0.3em] uppercase opacity-70">
+        Press [ESC] to exit
+    </p>
+    </div>
+
+    <script>
+    const secretCode = 'cstc';
+    let typedSequence = '';
+    
+    const easterEggScreen = document.getElementById('cstc-easter-egg');
+    const binaryStream = document.getElementById('binary-stream');
+    let binaryInterval;
+    let sequenceTimeout1, sequenceTimeout2;
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !easterEggScreen.classList.contains('hidden')) {
+            hideLogo();
+            return;
+        }
+
+        typedSequence += e.key.toLowerCase();
+        
+        if (typedSequence.length > secretCode.length) {
+            typedSequence = typedSequence.slice(-secretCode.length);
+        }
+
+        if (typedSequence === secretCode) {
+            if (easterEggScreen.classList.contains('hidden')) {
+                showLogo();
+            } else {
+                hideLogo();
+            }
+            typedSequence = ''; 
+        }
+    });
+
+    function showLogo() {
+        // THE FIX: Remove hidden and explicitly add flex!
+        easterEggScreen.classList.remove('hidden');
+        easterEggScreen.classList.add('flex');
+        
+        // Fade in background
+        setTimeout(() => {
+            easterEggScreen.classList.remove('opacity-0');
+            easterEggScreen.classList.add('opacity-100');
+        }, 50);
+
+        binaryStream.style.opacity = '1';
+        binaryStream.innerHTML = '';
+        binaryStream.className = 'font-mono text-center max-w-4xl px-8 leading-loose transition-all duration-500 text-green-400 text-xs md:text-base tracking-[0.2em] md:tracking-[0.4em]';
+        
+        const bytes = ["10110010", "011", "111", "101", "001"].map(b => b.replace(/ /g, '&nbsp;'));
+        const binaryText = bytes.join(' '); 
+        let i = 0;
+        
+        binaryInterval = setInterval(() => {
+            if (i < binaryText.length) {
+                if (binaryText.substring(i, i+6) === '&nbsp;') {
+                    binaryStream.innerHTML += '&nbsp;&nbsp;&nbsp;'; 
+                    i += 6;
+                } else {
+                    binaryStream.innerHTML += binaryText.charAt(i);
+                    i++;
+                }
+            } else {
+                clearInterval(binaryInterval);
+                
+                sequenceTimeout1 = setTimeout(() => {
+                    binaryStream.style.opacity = '0';
+                    
+                    sequenceTimeout2 = setTimeout(() => {
+                        binaryStream.innerHTML = '11 FEB 2025';
+                        binaryStream.className = 'font-mono text-center max-w-4xl px-8 leading-loose transition-all duration-500 text-white font-bold text-2xl md:text-4xl tracking-[0.4em] md:tracking-[0.6em] drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]';
+                        binaryStream.style.opacity = '1';
+                    }, 500); 
+                    
+                }, 1200); 
+            }
+        }, 30);
+    }
+
+    function hideLogo() {
+        easterEggScreen.classList.remove('opacity-100');
+        easterEggScreen.classList.add('opacity-0');
+        
+        clearInterval(binaryInterval);
+        clearTimeout(sequenceTimeout1);
+        clearTimeout(sequenceTimeout2);
+        
+        setTimeout(() => {
+            // THE FIX: Remove flex when hiding!
+            easterEggScreen.classList.remove('flex');
+            easterEggScreen.classList.add('hidden');
+        }, 700); 
+    }
+    </script>
 </body>
 </html>
